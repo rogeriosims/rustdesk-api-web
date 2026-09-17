@@ -7,6 +7,7 @@ import ru from 'element-plus/es/locale/lang/ru'
 import fr from 'element-plus/es/locale/lang/fr'
 import es from 'element-plus/es/locale/lang/es'
 import zhTw from 'element-plus/es/locale/lang/zh-tw'
+import ptBr from 'element-plus/es/locale/lang/pt-br'
 import { admin, app, server } from '@/api/config'
 
 const langs = {
@@ -17,8 +18,9 @@ const langs = {
   'ru': { name: 'Русский', value: ru, sideBarWidth: '250px' },
   'es': { name: 'Español', value: es, sideBarWidth: '280px' },
   'zh-TW': { name: '中文繁体', value: zhTw, sideBarWidth: '210px' },
+  'pt-BR': { name: 'Português', value: ptBr, sideBarWidth: '250px' },
 }
-const defaultLang = localStorage.getItem('lang') || navigator.language || 'zh-CN'
+const defaultLang = localStorage.getItem('lang') || 'pt-BR'
 export const useAppStore = defineStore({
   id: 'App',
   state: () => ({
@@ -29,7 +31,7 @@ export const useAppStore = defineStore({
       logo,
       langs: langs,
       lang: defaultLang,
-      locale: langs[defaultLang] ? langs[defaultLang] : langs['en'],
+      locale: langs[defaultLang] ? langs[defaultLang] : langs['pt-BR'],
       appConfig: {
         web_client: 1,
       },
